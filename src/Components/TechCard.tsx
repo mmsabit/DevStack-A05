@@ -1,19 +1,36 @@
 import { FaStar } from "react-icons/fa";
 import type { techType } from "../type";
-import { useState, type Dispatch, type SetStateAction } from "react";
-import { Slide, toast } from "react-toastify";
+import { type Dispatch, type SetStateAction } from "react";
+import { Bounce, Slide, toast } from "react-toastify";
 
 interface techProps {
   technology: techType;
-  techSelected:techType[];
-  setTechSelected:Dispatch<SetStateAction<techType[]>>
+  techSelected: techType[];
+  setTechSelected: Dispatch<SetStateAction<techType[]>>;
 }
 
 const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
-  const [isClicked, setClecked] = useState(false);
+  // const [isClicked, setClecked] = useState(false);
+
+  const isClicked = techSelected.some(
+    (techSelected) => techSelected.name === technology.name,
+  );
 
   const handleSelect = () => {
-    
+    if (isClicked) {
+      toast.error(`${technology.name} Already added in your stack`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
 
     toast.success(`${technology.name} Added in your stack`, {
       position: "bottom-right",
@@ -26,7 +43,7 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
       theme: "light",
       transition: Slide,
     });
-    setClecked(true);
+    // setClecked(true);
     setTechSelected([...techSelected, technology]);
   };
 

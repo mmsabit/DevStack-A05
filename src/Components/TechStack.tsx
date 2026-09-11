@@ -10,7 +10,7 @@ interface techProps {
 const TechStack = ({ techPromise }: techProps) => {
     const technologies = use(techPromise);
     const [techSelected,setTechSelected] = useState<techType[]>([]);
-    console.log(techSelected);
+
 
   return (
     <div className="xl:max-w-7xl w-[90%] mx-auto mb-40">

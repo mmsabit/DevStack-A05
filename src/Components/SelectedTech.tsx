@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { techType } from "../type";
 import SelectedTechList from "./SelectedTechList";
+import { toast, Bounce } from "react-toastify";
 
 interface techsProps {
   techSelected: techType[];
@@ -10,6 +11,18 @@ interface techsProps {
 const SelectedTech = ({ techSelected, setTechSelected }: techsProps) => {
   const handelRemoveAll = () =>{
     setTechSelected([]);
+
+    toast.warn("All Stack removed", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   }
   return (
     <div>
