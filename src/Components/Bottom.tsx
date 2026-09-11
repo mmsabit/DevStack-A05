@@ -5,9 +5,9 @@ const Bottom = () => {
     <div className="border-[#F1F5F9] border-t ">
       <footer className="xl:max-w-7xl mx-auto max-w-[90%]">
         <div className="my-14 flex gap-10">
-          <div className="w-2/5 flex flex-col gap-3 justify-center items-start">
+          <div className="lg:w-2/5 w-full flex flex-col gap-3 justify-center lg:items-start items-center">
             <img src={logo} alt="" />
-            <p className="text-sm">
+            <p className="text-sm lg:text-start text-center">
               Curated tools, technologies, and resources for developers building modern software.
             </p>
             <ul className="flex gap-4">
@@ -16,7 +16,7 @@ const Bottom = () => {
                 <li><a href="">Linkdin</a></li>
             </ul>
           </div>
-          <div className="w-1/5">
+          <div className="w-1/5 hidden lg:block">
             <h5 className="font-bold text-[#0F172A] mb-4">PRODUCT</h5>
             <ul className="text-[#64748B]">
                 <li>Home</li>
@@ -24,7 +24,7 @@ const Bottom = () => {
                 <li>Projects</li>
             </ul>
           </div>
-          <div className="w-1/5">
+          <div className="w-1/5 hidden lg:block">
             <h5 className="font-bold text-[#0F172A] mb-4">COMPANY</h5>
             <ul className="text-[#64748B]">
                 <li>About</li>
@@ -32,7 +32,7 @@ const Bottom = () => {
                 <li>Careers</li>
             </ul>
           </div>
-          <div className="w-1/5">
+          <div className="w-1/5 hidden lg:block">
             <h5 className="font-bold text-[#0F172A] mb-4">LEGAL</h5>
             <ul className="text-[#64748B]">
                 <li>Privacy Policy</li>
@@ -41,8 +41,8 @@ const Bottom = () => {
           </div>
         </div>
         <div className="py-8 border-[#F1F5F9] border-t flex justify-between items-center">
-            <p className="text-[#94A3B8]">© 2026 Dev Stack. All rights reserved.</p>
-            <ul className="flex gap-3 text-[#94A3B8]">
+            <p className="text-[#94A3B8] text-[10px] lg:text-base">© 2026 Dev Stack. All rights reserved.</p>
+            <ul className="flex gap-3 text-[#94A3B8] text-[10px] lg:text-base">
                 <li>Privacy</li>
                 <li>Terms</li>
             </ul>
