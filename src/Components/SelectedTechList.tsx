@@ -1,11 +1,22 @@
 import { IoCloseOutline } from "react-icons/io5";
 import type { techType } from "../type";
+import type { Dispatch, SetStateAction } from "react";
 
 interface techProps {
   technology: techType;
+  techSelected: techType[];
+  setTechSelected: Dispatch<SetStateAction<techType[]>>;
 }
 
-const SelectedTechList = ({ technology }: techProps) => {
+const SelectedTechList = ({ technology, techSelected, setTechSelected }: techProps) => {
+
+  const handelRemove = (technology: techType) => {
+    const resetTech = techSelected.filter(
+      (selectTech) => selectTech.name != technology.name
+    );
+
+    setTechSelected(resetTech);
+  }
   return (
       <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-2 mb-2">
         <div className="flex items-center justify-between gap-4">
@@ -18,7 +29,8 @@ const SelectedTechList = ({ technology }: techProps) => {
               <p className="text-[8px] font-medium text-[#6b7280]">{technology.category}</p>
             </div>
           </div>
-          <button className="group flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300">
+          <button className="group flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-gray-100"
+          onClick={() => handelRemovegit(technology)}>
             <IoCloseOutline />
           </button>
         </div>

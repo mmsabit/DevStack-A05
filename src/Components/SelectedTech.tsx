@@ -27,7 +27,7 @@ const SelectedTech = ({ techSelected, setTechSelected }: techsProps) => {
             </div>
           ) : (
             techSelected.map((technology: techType, ind: number) => {
-              return <SelectedTechList technology={technology} key={ind} />;
+              return <SelectedTechList technology={technology} key={ind} techSelected={techSelected} setTechSelected={setTechSelected}/>;
             })
           )}
         </div>
