@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import type { techType } from "../type";
 import { type Dispatch, type SetStateAction } from "react";
-import { Bounce, Slide, toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 
 interface techProps {
   technology: techType;
@@ -17,18 +17,7 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
   );
 
   const handleSelect = () => {
-    if (isClicked) {
-      toast.error(`${technology.name} Already added in your stack`, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+    if (isClicked) {  
       return;
     }
 
