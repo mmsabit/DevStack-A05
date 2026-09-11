@@ -1,6 +1,7 @@
 import { use } from "react";
 import type { techType } from "../type";
 import TechItem from "./TechItem";
+import SelectedTech from "./SelectedTech";
 
 interface techProps {
   techPromise: Promise<techType[]>;
@@ -9,7 +10,7 @@ interface techProps {
 const TechStack = ({ techPromise }: techProps) => {
     const technologies = use(techPromise);
   return (
-    <div className="xl:max-w-7xl w-[90%] mx-auto mb-20">
+    <div className="xl:max-w-7xl w-[90%] mx-auto mb-40">
       <div >
         <h2 className="text-4xl font-extrabold">
           Explore the <span className="dev-text">Technologies</span>
@@ -18,11 +19,13 @@ const TechStack = ({ techPromise }: techProps) => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <div className="flex mt-7">
+      <div className="flex mt-7 gap-8">
             <div className="w-3/4">
                 <TechItem technologies={technologies}/>
             </div>
-            <div className="w-1/4"></div>
+            <div className="w-1/4">
+                <SelectedTech/>
+            </div>
       </div>
     </div>
   );
