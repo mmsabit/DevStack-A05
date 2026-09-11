@@ -30,7 +30,7 @@ const SelectedTechList = ({ technology, techSelected, setTechSelected }: techPro
             </div>
           </div>
           <button className="group flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-gray-100"
-          onClick={() => handelRemovegit(technology)}>
+          onClick={() => handelRemove(technology)}>
             <IoCloseOutline />
           </button>
         </div>
