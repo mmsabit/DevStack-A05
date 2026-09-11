@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { techType } from "../type";
 import TechItem from "./TechItem";
 import SelectedTech from "./SelectedTech";
@@ -9,6 +9,9 @@ interface techProps {
 
 const TechStack = ({ techPromise }: techProps) => {
     const technologies = use(techPromise);
+    const [techSelected,setTechSelected] = useState<techType[]>([]);
+    console.log(techSelected);
+
   return (
     <div className="xl:max-w-7xl w-[90%] mx-auto mb-40">
       <div >
@@ -21,10 +24,10 @@ const TechStack = ({ techPromise }: techProps) => {
       </div>
       <div className="flex mt-7 gap-8">
             <div className="w-3/4">
-                <TechItem technologies={technologies}/>
+                <TechItem technologies={technologies} techSelected={techSelected} setTechSelected={setTechSelected}/>
             </div>
             <div className="w-1/4">
-                <SelectedTech/>
+                <SelectedTech techSelected={techSelected} setTechSelected={setTechSelected}/>
             </div>
       </div>
     </div>
