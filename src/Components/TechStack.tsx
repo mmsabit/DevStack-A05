@@ -9,7 +9,7 @@ interface techProps {
 const TechStack = ({ techPromise }: techProps) => {
     const technologies = use(techPromise);
   return (
-    <div className="xl:max-w-7xl w-[90%] mx-auto">
+    <div className="xl:max-w-7xl w-[90%] mx-auto mb-20">
       <div >
         <h2 className="text-4xl font-extrabold">
           Explore the <span className="dev-text">Technologies</span>
@@ -18,7 +18,7 @@ const TechStack = ({ techPromise }: techProps) => {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <div className="flex">
+      <div className="flex mt-7">
             <div className="w-3/4">
                 <TechItem technologies={technologies}/>
             </div>

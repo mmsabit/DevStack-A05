@@ -1,4 +1,5 @@
 import type { techType } from "../type";
+import TechCard from "./TechCard";
 
 interface techsProps{
     technologies:techType[];
@@ -6,11 +7,10 @@ interface techsProps{
 
 const TechItem = ({technologies}:techsProps) => {
     return (
-        <div>
+        <div className="grid grid-cols-3 gap-4">
             {technologies.map((technology:techType)=>{
-                console.log(technology);
                 return(
-                    <h2>{technology.name}</h2>
+                    <TechCard technology={technology}/>
                 );
             })}
         </div>
