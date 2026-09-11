@@ -3,8 +3,8 @@ import logo from "../assets/logo-text.png"
 
 const Nav = () => {
   return (
-    <div className="border-[#F1F5F9] border-b ">
-      <header className="max-w-7xl mx-auto flex justify-between items-center py-6 px-3">
+    <div className="border-[#F1F5F9] border-b bg-white sticky top-0 z-50">
+      <header className="max-w-7xl mx-auto flex justify-between items-center py-4 px-3">
         <div className="xl:hidden">
           <IoMdMenu size={30} />
         </div>

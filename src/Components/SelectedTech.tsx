@@ -26,7 +26,7 @@ const SelectedTech = ({ techSelected, setTechSelected }: techsProps) => {
   }
   return (
     <div className="h-full relative">
-      <div className="p-5 border border-[#F1F5F9] rounded-2xl lg:sticky lg:top-5">
+      <div className="p-5 border border-[#F1F5F9] rounded-2xl lg:sticky lg:top-26">
         <h5 className="text-[#0F172A]">Your Stack</h5>
         <small>
           {techSelected.length === 0

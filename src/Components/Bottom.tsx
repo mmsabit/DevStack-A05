@@ -40,9 +40,9 @@ const Bottom = () => {
             </ul>
           </div>
         </div>
-        <div className="py-8 border-[#F1F5F9] border-t flex justify-between items-center">
-            <p className="text-[#94A3B8] text-[10px] lg:text-base">© 2026 Dev Stack. All rights reserved.</p>
-            <ul className="flex gap-3 text-[#94A3B8] text-[10px] lg:text-base">
+        <div className="py-5 border-[#F1F5F9] border-t flex justify-between items-center">
+            <p className="text-[#94A3B8] text-[10px] lg:text-[14px]">© 2026 Dev Stack. All rights reserved.</p>
+            <ul className="flex gap-3 text-[#94A3B8] text-[10px] lg:text-[14px]">
                 <li>Privacy</li>
                 <li>Terms</li>
             </ul>
