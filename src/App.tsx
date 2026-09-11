@@ -4,6 +4,8 @@ import Hero from "./Components/Hero"
 import Nav from "./Components/Nav"
 import TechStack from "./Components/TechStack";
 import type { techType } from "./type";
+import SectionTwo from "./Components/SectionTwo";
+import LoadingComp from "./Components/LoadingComp";
 
 function App() {
   const techStack = async():Promise<techType[]> => {
@@ -17,7 +19,8 @@ function App() {
     <>
         <Nav />
         <Hero />
-        <Suspense fallback="Loading..........">
+        <SectionTwo/>
+        <Suspense fallback={<LoadingComp/>}>
             <TechStack techPromise={techPromise}/>
         </Suspense>        
         <Bottom/>

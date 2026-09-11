@@ -25,8 +25,8 @@ const SelectedTech = ({ techSelected, setTechSelected }: techsProps) => {
     });
   }
   return (
-    <div>
-      <div className="p-5 border border-[#F1F5F9] rounded-2xl">
+    <div className="h-full relative">
+      <div className="p-5 border border-[#F1F5F9] rounded-2xl lg:sticky lg:top-5">
         <h5 className="text-[#0F172A]">Your Stack</h5>
         <small>
           {techSelected.length === 0
@@ -44,7 +44,8 @@ const SelectedTech = ({ techSelected, setTechSelected }: techsProps) => {
             })
           )}
         </div>
-        <button className="text-red-600 border border-red-600 py-2 rounded-lg w-full hover:bg-red-600 hover:text-white mt-5 cursor-pointer" onClick={handelRemoveAll} > Reset All</button>
+      <button className={`text-red-600 border border-red-600 py-2 rounded-lg w-full hover:bg-red-600 hover:text-white mt-5 cursor-pointer 
+        ${techSelected.length === 0 ? "hidden":""}`} onClick={handelRemoveAll} > Reset All</button>
       </div>
     </div>
   );

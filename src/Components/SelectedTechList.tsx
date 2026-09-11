@@ -34,7 +34,7 @@ const SelectedTechList = ({
     });
   };
   return (
-    <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-2 mb-2">
+    <div className="max-w-sm rounded-lg border border-[#F1F5F9] bg-white p-2 mb-2">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center">

@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import type { techType } from "../type";
 import { type Dispatch, type SetStateAction } from "react";
-import { Slide, toast } from "react-toastify";
+import { Bounce, Slide, toast } from "react-toastify";
 
 interface techProps {
   technology: techType;
@@ -17,7 +17,18 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
   );
 
   const handleSelect = () => {
-    if (isClicked) {  
+    if (isClicked) {
+      toast.error(`${technology.name} Already in your stack`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       return;
     }
 
@@ -39,7 +50,7 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
   return (
     <div>
       <div
-        className={`max-w-sm rounded-3xl border transition duration-300 bg-white p-6 shadow-xl shadow-gray-100 ${isClicked ? "border-[#d91b7e]" : "border-gray-200"}`}
+        className={`max-w-sm rounded-3xl border transition duration-300 bg-white p-6 hover:shadow-xl shadow-gray-100 ${isClicked ? "border-[#d91b7e]" : "border-gray-200"}`}
       >
         <div className="flex items-center justify-between">
           <div className="flex h-12 w-12 items-center justify-center">
@@ -73,11 +84,11 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
         </div>
 
         <button
-          className="mt-5 w-full rounded-xl bg-[#0b0f19] py-3 text-sm font-semibold text-white border  hover:bg-gray-800 dev-btn cursor-pointer transition duration-300"
+          className={`mt-5 w-full rounded-xl bg-[#0b0f19] py-3 text-sm font-semibold text-white border  hover:bg-gray-800 cursor-pointer transition duration-300 ${isClicked ? "dev-btn-disabled" : "cursor-pointer"}`}
           onClick={handleSelect}
-          disabled={isClicked}
+          
         >
-          {isClicked ? "Added" : "Add to stack"}
+          {isClicked ? "Added to stack" : "Add to stack"}
         </button>
       </div>
     </div>

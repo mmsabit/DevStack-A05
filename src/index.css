@@ -18,8 +18,9 @@ body {
 }
 
 
-.dev-btn:disabled{
+.dev-btn-disabled{
   border-color: #d91b7e;
   background-color: white;
-  color:#d91b7e
+  color:#d91b7e;
+  
 }

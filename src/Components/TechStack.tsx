@@ -8,27 +8,26 @@ interface techProps {
 }
 
 const TechStack = ({ techPromise }: techProps) => {
-    const technologies = use(techPromise);
-    const [techSelected,setTechSelected] = useState<techType[]>([]);
-
+  const technologies = use(techPromise);
+  const [techSelected, setTechSelected] = useState<techType[]>([]);
 
   return (
     <div className="xl:max-w-7xl w-[90%] mx-auto mb-40">
-      <div >
-        <h2 className="text-4xl font-extrabold">
-          Explore the <span className="dev-text">Technologies</span>
-        </h2>
-        <p className="text-[#64748B] mt-1">
-          Pick one technology per category to build your ideal stack.
-        </p>
-      </div>
-      <div className="flex mt-7 gap-8">
-            <div className="w-3/4">
-                <TechItem technologies={technologies} techSelected={techSelected} setTechSelected={setTechSelected}/>
-            </div>
-            <div className="w-1/4">
-                <SelectedTech techSelected={techSelected} setTechSelected={setTechSelected}/>
-            </div>
+      
+      <div className="flex flex-col lg:flex-row mt-7 gap-8">
+        <div className="lg:w-3/4 w-full">
+          <TechItem
+            technologies={technologies}
+            techSelected={techSelected}
+            setTechSelected={setTechSelected}
+          />
+        </div>
+        <div className="lg:w-1/4 w-full">
+          <SelectedTech
+            techSelected={techSelected}
+            setTechSelected={setTechSelected}
+          />
+        </div>
       </div>
     </div>
   );
