@@ -3,7 +3,7 @@ import Banner from "../assets/banner-stack.png"
 const Hero = () => {
   return (
     <div>
-      <section className="py-16 lg:max-w-7xl mx-auto flex justify-center items-center flex-col lg:flex-row w-[90%]">
+      <section className="py-16 xl:max-w-7xl mx-auto flex justify-center items-center flex-col lg:flex-row w-[90%]">
         <div className="lg:w-2/3 flex flex-col gap-6 justify-center items-center lg:items-start w-full">
           <h1 className="font-extrabold lg:text-6xl text-3xl text-center lg:text-start">
             Build Your Ideal <br />
