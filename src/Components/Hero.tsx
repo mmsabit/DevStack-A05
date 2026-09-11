@@ -15,8 +15,8 @@ const Hero = () => {
             project.
           </p>
           <div className="flex items-center justify-start gap-2 w-full lg:w-auto">
-            <button className="bg-linear-to-r from-[#F97316] to-[#EC4899]  text-white px-3 py-2.5 rounded-lg lg:text-base text-[12px] lg:w-auto w-1/2">Explore Technologies</button>
-            <button className="lg:px-11.5 py-2.5 rounded-lg lg:text-base text-[12px] border border-[#374151] lg:w-auto w-1/2">Learn More</button>
+            <button className="bg-linear-to-r from-[#F97316] to-[#EC4899]  text-white px-3 py-2.5 rounded-lg lg:text-base text-[12px] lg:w-auto w-1/2  cursor-pointer">Explore Technologies</button>
+            <button className="lg:px-11.5 py-2.5 rounded-lg lg:text-base text-[12px] border border-[#374151] lg:w-auto w-1/2 hover:bg-[#D91B7E] hover:border-[#D91B7E] hover:text-white cursor-pointer">Learn More</button>
           </div>
         </div>
         <div className="lg:w-1/3 w-full">

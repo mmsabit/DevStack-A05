@@ -8,21 +8,21 @@ const Nav = () => {
         <div className="xl:hidden">
           <IoMdMenu size={30} />
         </div>
-        <div className="">
+        <div className="cursor-pointer">
           <img src={logo} alt="Logo" />
         </div>
         <nav className="hidden xl:block">
           <ul className="text-base text-[#334155] flex items-center gap-6 cursor-pointer font-medium">
-            <li className="text-[#DB2777]">Home</li>
-            <li>Technologies</li>
-            <li>Projects</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li className="hover:text-[#DB2777]">Home</li>
+            <li className="hover:text-[#DB2777]">Technologies</li>
+            <li className="hover:text-[#DB2777]">Projects</li>
+            <li className="hover:text-[#DB2777]">About</li>
+            <li className="hover:text-[#DB2777]">Contact</li>
           </ul>
         </nav>
         <div className="flex gap-5 items-center">
-          <a className="xl:text-base text-[#334155] font-medium text-[12px]" href="">Sign in</a>
-          <button className="xl:text-base text-white font-medium xl:px-5 xl:py-2.5 bg-[#D91B7E] rounded-full text-[12px] px-2.5 py-1.5">Sign up</button>
+          <a className="xl:text-base text-[#334155] font-medium text-[12px] hover:text-[#DB2777]" href="#">Sign in</a>
+          <button className="xl:text-base text-white font-medium xl:px-5 xl:py-2.5 bg-[#D91B7E] hover:bg-[#b8176a] rounded-full text-[12px] px-2.5 py-1.5 cursor-pointer">Sign up</button>
         </div>
       </header>
     </div>
