@@ -20,7 +20,7 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
     if (isClicked) {
       toast.error(`${technology.name} Already in your stack`, {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: true,
@@ -34,7 +34,7 @@ const TechCard = ({ technology, techSelected, setTechSelected }: techProps) => {
 
     toast.success(`${technology.name} Added in your stack`, {
       position: "bottom-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,

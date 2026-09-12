@@ -1,75 +1,57 @@
-# React + TypeScript + Vite
+# Project Name: DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevStack is a platform where you can mark and manage the technologies you have learned.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React.js
+- Tailwind CSS
+- TypeScript / JavaScript (ES6+)
+- React-Toastify
+- React Icons
+- JSON (for technology data)
+- Vite (build tool)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add a technology to the stack
+- Remove a technology from the stack
+- Manage technologies in the stack
 
-## Expanding the ESLint configuration
+## 📚 Simple Answer Questions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. What is JSX, and why is it used in React?
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Answer:** JSX means JavaScript XML. It is a syntax extension for JavaScript that allows developers to write HTML markup directly inside JavaScript files. JSX provides a clean, visual representation of the UI that is easier to read, write, and maintain.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 2. What is the difference between props and state?
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Answer:** Props are used to pass data from a parent component to a child component. State is data that is managed within a component. State is private and fully controlled by the component itself.
 
-```
+### 3. What does the `useState` hook do, and where did you use it in this project?
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+**Answer:** The `useState` hook is used to manage and remember state, such as data rendering, data storing, triggering re-renders, and fetched data. In this project, `useState` is used in several places, including rendering the selected technologies in the stack.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Answer:** The `useEffect` hook lets you perform side effects, such as data fetching, setting up subscriptions, or manually changing the DOM, in functional components after the render phase.
 
-```
+Fetching external data is an asynchronous side effect. If you put a fetch call directly inside the component body, it would run on every render. `useEffect` ensures the data is fetched only when intended, typically when the component first loads.
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+**Answer:** Every item in a `.map()` list needs a unique `key` prop because React can efficiently track and manage elements when the UI updates.
+
+### 6. What is conditional rendering? Show one place you used it.
+
+**Answer:** Conditional rendering means showing a data element or component depending on a condition.
+
+I used it in several places, such as:
+- Disabling a button when a technology is already selected.
+- Showing **“No technologies selected yet.”** when there is no selected technology.
+
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+**Answer:** To pass data from a parent component to a child component, we use component props. Through props, we can pass data from the parent to the child.
+
+To send something back from the child to the parent, we can declare the state in the parent and pass a state-updating function to the child. The child can then call that function to send data or a request back to the parent.
