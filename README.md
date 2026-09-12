@@ -9,8 +9,8 @@ DevStack is a platform where you can mark and manage the technologies you have l
 - TypeScript / JavaScript (ES6+)
 - React-Toastify
 - React Icons
-- JSON (for technology data)
-- Vite (build tool)
+- JSON 
+- Vite
 
 ## ✨ Features
 
