@@ -22,5 +22,5 @@ body {
   border-color: #d91b7e;
   background-color: white;
   color:#d91b7e;
-  
+  cursor: no-drop;
 }
